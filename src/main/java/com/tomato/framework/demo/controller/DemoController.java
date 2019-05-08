@@ -1,7 +1,9 @@
 package com.tomato.framework.demo.controller;
 
 import com.tomato.framework.demo.dto.PostDemo;
+import com.tomato.framework.plugin.mqtt.gateway.MQTTGateway;
 import com.tomato.framework.rest.result.Result;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,13 +16,22 @@ import org.springframework.web.bind.annotation.RestController;
 public class DemoController {
     
     @GetMapping("/getDemo")
-    public Result<?> getDemo(@RequestParam String name){
+    public Result<?> getDemo(@RequestParam String name) {
         return Result.ok(name);
     }
     
     @PostMapping("/postDemo")
-    public Result<?> postDemo(@RequestBody PostDemo postDemo){
+    public Result<?> postDemo(@RequestBody PostDemo postDemo) {
         return Result.ok(postDemo);
+    }
+    
+    @Autowired
+    private MQTTGateway mqttGateway;
+    
+    @GetMapping("/mqttDemo")
+    public Result<?> mqttDemo(@RequestParam String msg) {
+        mqttGateway.sendToMqtt("topic1",msg);
+        return Result.ok(msg);
     }
     
 }

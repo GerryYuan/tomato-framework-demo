@@ -30,11 +30,18 @@
       <artifactId>tomato-framework-plugin-rmi</artifactId>
       <version>${tomato-framework.version}</version>
     </dependency>
+<!--    <dependency>-->
+<!--      <groupId>com.tomato.framework</groupId>-->
+<!--      <artifactId>tomato-framework-test</artifactId>-->
+<!--      <version>${tomato-framework.version}</version>-->
+<!--    </dependency>-->
+
     <dependency>
       <groupId>com.tomato.framework</groupId>
-      <artifactId>tomato-framework-test</artifactId>
+      <artifactId>tomato-framework-plugin-mqtt</artifactId>
       <version>${tomato-framework.version}</version>
     </dependency>
+
   </dependencies>
 
   <build>
