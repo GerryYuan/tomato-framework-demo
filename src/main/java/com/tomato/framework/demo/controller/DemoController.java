@@ -1,7 +1,7 @@
 package com.tomato.framework.demo.controller;
 
 import com.tomato.framework.demo.dto.PostDemo;
-import com.tomato.framework.plugin.mqtt.gateway.MQTTGateway;
+import com.tomato.framework.plugin.mqtt.gateway.MqttGateway;
 import com.tomato.framework.rest.result.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,7 +26,7 @@ public class DemoController {
     }
     
     @Autowired
-    private MQTTGateway mqttGateway;
+    private MqttGateway mqttGateway;
     
     @GetMapping("/mqttDemo")
     public Result<?> mqttDemo(@RequestParam String msg) {

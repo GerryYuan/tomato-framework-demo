@@ -3,12 +3,9 @@ com:
     username: admin
     password: public
     url: tcp://192.168.80.128:1883
-    inbound:
-      clientId: emq-client-id-subscribe
-      topic: topic1,topic2
-      completionTimeout: 60
-    outbound:
-      clientId: emq-client-id-publisher
-      topic: topic1
+    default`Topic: topic1
+    subscribeId: emq-client-id-subscribe
+    publisherId: emq-client-id-publisher
+    topics: topic1,topic2
 server:
   port: 7000
