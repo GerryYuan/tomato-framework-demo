@@ -3,9 +3,7 @@ com:
     username: admin
     password: public
     url: tcp://192.168.80.128:1883
-    default`Topic: topic1
-    subscribeId: emq-client-id-subscribe
-    publisherId: emq-client-id-publisher
+    defaultTopic: topic1
     topics: topic1,topic2
 server:
   port: 7000
