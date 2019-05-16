@@ -8,6 +8,7 @@ public class ServerApplication {
     
     public static void main(String[] args) {
         RMIServer rmiServer = new RMIServerImpl();
-        rmiServer.publish(new HelloWorldImpl(), 8000);
+        rmiServer.publish(new HelloWorldImpl(), 7000);
+        System.out.println("server发布成功");
     }
 }
