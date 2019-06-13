@@ -7,6 +7,8 @@ public class Server2Application {
     
     public static void main(String[] args) throws Exception {
         RmiRegister register = new RmiRegister(HelloWorld.class.getSimpleName(), new HelloWorldImpl());
-        new Rmi2Server(register).start();
+        Rmi2Server rmi2Server = new Rmi2Server(register);
+        rmi2Server.start();
+        rmi2Server.stop();
     }
 }
